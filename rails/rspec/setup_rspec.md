@@ -1,10 +1,9 @@
 ## Setup RSpec
 
 * **Necessary gems for rspec**
-```
+```Gemfile
 gem 'rspec-rails'
 gem 'factory_girl_rails'
-gem 'capybara', '~> 2.7', '>= 2.7.1'
 gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
 gem 'ffaker'
 gem 'capybara'
@@ -14,8 +13,8 @@ gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 * **Run `rails generate rspec:install`**
 
 
-* **Add `app/config/initializers/gererators.rb`**
-```
+* **Add `config/initializers/generators.rb`**
+```ruby
 Rails.application.config.generators do |g|
     g.test_framework :rspec,
     fixture: true,
@@ -30,7 +29,7 @@ Rails.application.config.generators do |g|
 end
 ```
 * **Add `spec/rails_helper.rb`**
-```
+```ruby
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     # Choose a test framework:
